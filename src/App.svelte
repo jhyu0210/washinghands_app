@@ -1,30 +1,33 @@
+<!-- <h1> Test1</h1> -->
 <script>
-	export let name;
+	import Timer from "./Timer.svelte"
+	import HowTo from "./HowTo.svelte";
+	let audio;
+	function timerEnds(e){
+		audio.play();
+	}
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
 	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+		text-align:center
 	}
 </style>
+<h1>HandWashing App</h1>
+
+<Timer on:end={timerEnds}/>
+<HowTo/>
+
+<h3>
+	<a href="https:/www.who.int/gpsc/clean_hands_protection/en/">Picture Source</a>
+	<a href="https://freesound.org/people/metrostock99/sounds/345086/">Sound Source</a>
+</h3>
+
+<!-- <audio bind:this={audio}>
+	<source src="oh_ye.wav" type="audio/wav"/>
+</audio>	 -->
+
+<!-- svelte-ignore a11y-media-has-caption -->
+<audio bind:this={audio}>
+  <source src="oh_ye.wav" type="audio/wav">
+</audio>
