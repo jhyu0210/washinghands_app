@@ -103,6 +103,8 @@ Then, from within your project folder:
 npm run build
 surge public my-project.surge.sh
 ```
+
+```bash
 uploading to ghPages
 1.npm install --save-dev gh-pages
 2.rollup.config.js
@@ -112,3 +114,4 @@ uploading to ghPages
 		})
 3.npm run build
 4.go to github page
+```
